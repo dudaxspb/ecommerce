@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
-public class Servidor {
+public class ServidorEcommerce {
     public static void main(String[] args) {
         ServerSocket servidor;
         Socket cliente;
