@@ -30,7 +30,7 @@ public class ClienteHandler implements Runnable {
                 return;
             }
 
-            out.println("Bem vindo a loja " + login + "!");
+            out.println("OK");
 
             while (in.hasNextLine()) {
                 String comando = in.nextLine();
@@ -82,7 +82,7 @@ public class ClienteHandler implements Runnable {
                         }
 
                     }catch (NumberFormatException e) {
-                        out.println("ERRO:NUMERO_INVALIDO");
+                        out.println("ERRO: NUMERO_INVALIDO");
                         continue;
                     }
 
@@ -90,7 +90,7 @@ public class ClienteHandler implements Runnable {
                     out.println("DESCONECTADO");
                     break;
                 } else {
-                    out.println("ERRO:COMANDO_INVALIDO");
+                    out.println("ERRO: COMANDO INVALIDO");
                 }
             }
 

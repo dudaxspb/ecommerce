@@ -41,7 +41,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return codigo + ";" + nome + ";" + preco + ";" + estoque + "DISPONIVEIS";
+        return "Cód: " + codigo + "|" + "Produto:"+ nome + "|" + preco +"R$ "+ "|" + estoque + " DISPONIVEIS";
     }
 
 }

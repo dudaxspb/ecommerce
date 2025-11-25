@@ -2,6 +2,7 @@ package Cliente;
 
 import java.net.Socket;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class ClienteEcommerce {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class ClienteEcommerce {
             Scanner in = new Scanner(socket.getInputStream());
             Scanner sc = new Scanner(System.in);
             // PrintWriter para enviar
-            java.io.PrintWriter out = new java.io.PrintWriter(socket.getOutputStream(), true);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             System.out.println(in.nextLine()); // LOGIN
             out.println(sc.nextLine());
@@ -21,7 +22,7 @@ public class ClienteEcommerce {
 
             String resposta = in.nextLine();
 
-            if (!resposta.startsWith("Bem vindo")) {
+            if (!resposta.startsWith("OK")) {
                 System.out.println("Falha no login.");
                 socket.close();
                 return;
@@ -86,9 +87,12 @@ public class ClienteEcommerce {
             }
 
             socket.close();
+            in.close();
+            sc.close(); 
 
         } catch (Exception e) {
             System.out.println("Erro cliente: " + e.getMessage());
+
         }
     }
 }
